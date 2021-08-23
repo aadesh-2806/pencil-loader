@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #333;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+}
+section{
+    transform: translateY(-100px) translateX(-30px) rotate(135deg);
+    animation: animate 4s ease-in-out infinite;
+    position: relative;
+    transform-origin: bottom;
+}
+.line{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    height: 10px;
+    background-color: rgb(179, 149, 94);
+    transform: translateY(20px) translateX(-8px);
+    animation: animatel 4s ease-in-out infinite;
+}
+h3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    color: #fff;
+    transform: translateY(80px) translateX(-16px);
+}
+@keyframes animate {
+    0%{
+        transform: translateY(-150px) translateX(-30px) rotate(135deg);
+    }
+    25%{
+        transform: translateY(-100px) translateX(-30px) rotate(315deg);
+    }
+    50%{
+        transform: translateY(-100px) translateX(250px) rotate(315deg);
+    }
+    75%{
+        transform: translateY(-150px) translateX(230px) rotate(495deg);
+    }
+    100%{
+        transform: translateY(-150px) translateX(-30px) rotate(495deg);
+    }
+}
+@keyframes animatel {
+    0%{
+        width: 0;
+    }
+    25%{
+        width: 0;
+    }
+    50%{
+        width: 280px;
+    }
+    75%{
+        width: 280px;
+    }
+    100%{
+        width: 0;
+    }
+}
+.pencil{
+    width: 300px;
+    height: 40px;
+    background-color: rgb(106, 155, 10);
+}
+.pencil::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 29.5px;
+    height: 29.5px;
+    background-color: black;
+    transform-origin: bottom;
+    transform: translateX(-26px) rotate(45deg);
+}
+.pencil::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    transform-origin: bottom;
+    transform: translateX(-23px) translateY(13px) rotate(45deg);
+    border-top-right-radius: 15px;
+}
+.back{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    transform: translateX(40px);
+    background-color: black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
